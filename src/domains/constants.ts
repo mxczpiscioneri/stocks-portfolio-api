@@ -1,0 +1,8 @@
+const Constants = {
+  BROKER_REPOSITORY: 'BROKER_REPOSITORY',
+  STOCK_REPOSITORY: 'STOCK_REPOSITORY'
+}
+
+export {
+  Constants
+}

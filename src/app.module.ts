@@ -1,8 +1,11 @@
 import { Module } from '@nestjs/common';
-import { RecommendationsModule } from './recommendations/recommendations.module';
+import { RecommendationsModule } from './api/recommendations/recommendations.module';
+import { BrokerModule } from './api/broker/broker.module';
+import { StockModule } from './api/stock/stock.module';
+import { BrokerPerformanceModule } from './api/broker-performance/broker-performance.module';
 
 @Module({
-  imports: [RecommendationsModule],
+  imports: [RecommendationsModule, BrokerModule, StockModule, BrokerPerformanceModule],
   controllers: [],
   providers: [],
 })
