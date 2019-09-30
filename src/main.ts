@@ -1,7 +1,10 @@
 console.log('======= Dirname =====: ', __dirname)
 import { NestFactory } from '@nestjs/core';
 
-import Config from '/src/config/environment'
+import * as Path from 'path'
+console.log('======== Path ========', Path.join(__dirname, ''))
+
+import Config from '../src/config/environment'
 
 import { AppModule } from './app.module';
 
