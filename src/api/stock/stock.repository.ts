@@ -1,6 +1,8 @@
 import { Injectable, Inject } from "@nestjs/common";
-import { Constants } from "../../domains/constants";
+
 import Stock from "./stock.model";
+
+import { Constants } from "../../domains/constants";
 
 @Injectable()
 export class StockRepository {

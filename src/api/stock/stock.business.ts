@@ -1,6 +1,8 @@
 import { Injectable } from "@nestjs/common";
-import { StockRepository } from "./stock.repository";
+
 import Stock from "./stock.model";
+
+import { StockRepository } from "./stock.repository";
 
 @Injectable()
 export class StockBusiness {
@@ -10,7 +12,7 @@ export class StockBusiness {
 
   async findAll(): Promise<Stock[]> {
     try {
-      const stocks = this.repository.findAll()
+      const stocks = await this.repository.findAll()
       return stocks
     } catch (error) {
       console.log('Error StockBusiness.findAll: ', error.message)

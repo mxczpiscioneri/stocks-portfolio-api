@@ -1,6 +1,8 @@
 import { Controller, Get } from '@nestjs/common';
-import { StockBusiness } from './stock.business';
+
 import Stock from './stock.model';
+
+import { StockBusiness } from './stock.business';
 
 @Controller('stocks')
 export class StockController {

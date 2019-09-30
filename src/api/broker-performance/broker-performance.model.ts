@@ -1,8 +1,15 @@
-import { Table, Column, DataType } from "sequelize-typescript";
-import { Model } from "sequelize/types";
+import { Table, Column, DataType, Model } from "sequelize-typescript";
 
-@Table({})
+@Table({
+  tableName: 'broker_performance',
+  underscored: true,
+  freezeTableName: true,
+  timestamps: false
+})
 export default class BrokerPerformance extends Model<BrokerPerformance> {
+  @Column(DataType.INTEGER)
+  idBroker: number
+
   @Column(DataType.DATEONLY)
   mounth: Date
 

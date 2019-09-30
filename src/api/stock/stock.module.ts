@@ -1,4 +1,5 @@
 import { Module } from '@nestjs/common';
+
 import { StockController } from './stock.controller';
 import { DatabaseModule } from '../../config/database/database.module';
 import { stockProviders } from './stock.providers';
