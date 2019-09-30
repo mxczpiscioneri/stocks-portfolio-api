@@ -13,4 +13,8 @@ export class StockRepository {
   async findAll(): Promise<Stock[]> {
     return await this.model.findAll()
   }
+
+  async create(stock: Stock): Promise<Stock> {
+    return await this.model.create(stock)
+  }
 }

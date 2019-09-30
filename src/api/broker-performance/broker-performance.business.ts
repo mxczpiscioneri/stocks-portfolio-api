@@ -19,4 +19,14 @@ export class BrokerPerformanceBusiness {
       throw error
     }
   }
+
+  async create(brokerPerformace: BrokerPerformance): Promise<BrokerPerformance> {
+    try {
+      const response = await this.repository.create(brokerPerformace)
+      return response
+    } catch (error) {
+      console.log('Error BrokerPerformanceBusiness.create', error)
+      throw error
+    }
+  }
 }

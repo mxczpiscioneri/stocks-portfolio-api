@@ -1,4 +1,6 @@
-import { Table, Column, DataType, Model } from "sequelize-typescript";
+import { Table, Column, DataType, Model, ForeignKey, BelongsTo } from "sequelize-typescript";
+
+import Broker from "../broker/broker.model";
 
 @Table({
   tableName: 'broker_performance',
@@ -7,6 +9,7 @@ import { Table, Column, DataType, Model } from "sequelize-typescript";
   timestamps: false
 })
 export default class BrokerPerformance extends Model<BrokerPerformance> {
+  @ForeignKey(() => Broker)
   @Column(DataType.INTEGER)
   idBroker: number
 
@@ -21,4 +24,7 @@ export default class BrokerPerformance extends Model<BrokerPerformance> {
 
   @Column(DataType.DATE)
   createdAt: Date
+
+  @BelongsTo(() => Broker)
+  broker: Broker
 }

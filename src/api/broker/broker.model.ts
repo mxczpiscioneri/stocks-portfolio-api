@@ -1,4 +1,6 @@
-import { Table, Model, Column } from "sequelize-typescript";
+import { Table, Model, Column, HasMany } from "sequelize-typescript";
+
+import BrokerPerformance from "../broker-performance/broker-performance.model";
 
 @Table({
   tableName: 'broker',
@@ -12,4 +14,7 @@ export default class Broker extends Model<Broker> {
 
   @Column
   createdAt: Date
+
+  @HasMany(() => BrokerPerformance)
+  brokerPerformances: BrokerPerformance[]
 }

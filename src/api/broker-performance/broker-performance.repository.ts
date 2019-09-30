@@ -13,4 +13,8 @@ export class BrokerPerformanceRepository {
   async findAll(): Promise<BrokerPerformance[]> {
     return await this.model.findAll()
   }
+
+  async create(brokerPerformance: BrokerPerformance): Promise<BrokerPerformance> {
+    return await this.model.create(brokerPerformance)
+  }
 }

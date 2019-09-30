@@ -1,7 +1,8 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, Post, Body } from '@nestjs/common';
+
+import BrokerPerformance from './broker-performance.model';
 
 import { BrokerPerformanceBusiness } from './broker-performance.business';
-import BrokerPerformance from './broker-performance.model';
 
 @Controller('brokerperformances')
 export class BrokerPerformanceController {
@@ -13,5 +14,11 @@ export class BrokerPerformanceController {
   async findAll(): Promise<BrokerPerformance[]> {
     const brokerPerformances = await this.business.findAll()
     return brokerPerformances
+  }
+
+  @Post()
+  async create(@Body() brokerPerformance: BrokerPerformance): Promise<BrokerPerformance> {
+    const result = await this.business.create(brokerPerformance)
+    return result
   }
 }

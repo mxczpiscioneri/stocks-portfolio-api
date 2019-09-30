@@ -1,7 +1,8 @@
 import { Injectable, Inject } from "@nestjs/common";
-import { Constants } from "../../domains/constants";
+
 import Broker from "./broker.model";
 
+import { Constants } from "../../domains/constants";
 
 @Injectable()
 export class BrokerRepository {
@@ -11,5 +12,9 @@ export class BrokerRepository {
 
   async findAll(): Promise<Broker[]> {
     return await this.model.findAll()
+  }
+
+  async create(broker: Broker): Promise<Broker> {
+    return await this.model.create(broker)
   }
 }

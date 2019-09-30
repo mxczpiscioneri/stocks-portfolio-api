@@ -19,4 +19,14 @@ export class StockBusiness {
       throw error
     }
   }
+
+  async create(stock: Stock): Promise<Stock> {
+    try {
+      const response = await this.repository.create(stock)
+      return response
+    } catch (error) {
+      console.log('Error StockBusiness.create: ', error)
+      throw error
+    }
+  }
 }
