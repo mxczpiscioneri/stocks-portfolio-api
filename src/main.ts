@@ -4,7 +4,7 @@ import { NestFactory } from '@nestjs/core';
 import * as Path from 'path'
 console.log('======== Path ========', Path.join(__dirname, ''))
 
-import Config from 'src/config/environment'
+import Config from './config/environment'
 
 import { AppModule } from './app.module';
 
