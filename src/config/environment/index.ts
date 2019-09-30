@@ -5,7 +5,6 @@ import * as Dotenv from 'dotenv'
 
 const setup = () => {
   process.env.NODE_ENV = process.env.NODE_ENV || 'development';
-  // const envPath = Path.join(__dirname, '../../../../.env')
   const envPath = process.env.NODE_ENV === 'test' ? Path.join(__dirname, '/../../../../test/.env') : Path.join(__dirname, `/../../../../.env.${process.env.NODE_ENV}`);
 
   try {
